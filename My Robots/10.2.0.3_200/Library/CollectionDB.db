@@ -1,0 +1,5 @@
+#Database Mapping
+#Thu Dec 14 10:36:46 EST 2017
+dbConnectionDisplayName=CollectionDB (Management Console)
+mapToDatabaseConfiguration=CollectionDB
+showWarnings=true

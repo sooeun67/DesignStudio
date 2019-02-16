@@ -1,0 +1,5 @@
+#Database Mapping
+#Thu Dec 14 10:37:19 EST 2017
+dbConnectionDisplayName=ObjectInfoDB (Management Console)
+mapToDatabaseConfiguration=ObjectInfoDB
+showWarnings=false

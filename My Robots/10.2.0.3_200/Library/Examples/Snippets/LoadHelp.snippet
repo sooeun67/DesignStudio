@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Snippet" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>8.3.0</version>
+      <version>9.1.0</version>
+      <version>9.3.0</version>
+      <version>9.4.0</version>
+    </saved-by-versions>
+    <referenced-types/>
+    <referenced-snippets/>
+    <typed-variables/>
+    <global-variables/>
+    <parameters/>
+    <return-variables/>
+    <store-in-database-variables/>
+    <browser-engine>WEBKIT</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables"/>
+  <comment class="String"/>
+  <body class="Body">
+    <blockBeginStep class="BlockBeginStep" id="0"/>
+    <steps class="ArrayList">
+      <object class="Transition" serializationversion="0" id="1">
+        <property name="name" class="String">Load Page</property>
+        <property name="stepAction" class="LoadPage2">
+          <property name="urlProvider" class="kapow.robot.plugin.common.stepaction.urlprovider2.ExpressionURLProvider2">
+            <property name="expression" class="String">&gt;&gt;http://kapowsoftware.com/tutorial/examples/3/&lt;&lt;+Robot.name+&gt;&gt;.html&lt;&lt;</property>
+          </property>
+          <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="18">
+            <property name="screenSize" class="kapow.robot.plugin.common.support.browser2.ScreenSize">
+              <property name="height" class="Integer">1024</property>
+              <property name="width" class="Integer">768</property>
+            </property>
+            <property name="migrationNotes" class="kapow.robot.plugin.common.support.Text">
+              <property name="text" class="String">Default value changed: screenSize 800 x 600 -&gt; 1280 x 1024
+Default value changed: userAgentProvider Internet Explorer 8.0 on Windows 7 -&gt; Chrome 27.0 on Windows 7
+Default value changed: ignoreLoadErrors false -&gt; true</property>
+            </property>
+            <property name="ancestorProvider" class="BrowserConfigurationSpecificationAncestorProviderForStep"/>
+            <property name="changedProperties" class="java.util.HashSet">
+              <element class="String">screenSize</element>
+            </property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" class="Boolean">true</property>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep" id="2"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="0"/>
+        <to idref="1"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="2"/>
+      </object>
+    </edges>
+  </body>
+</object>

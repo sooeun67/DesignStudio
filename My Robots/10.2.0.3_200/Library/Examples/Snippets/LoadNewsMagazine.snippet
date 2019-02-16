@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Snippet" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>8.3.0</version>
+      <version>9.3.0</version>
+    </saved-by-versions>
+    <referenced-types/>
+    <referenced-snippets/>
+    <typed-variables/>
+    <global-variables/>
+    <parameters/>
+    <return-variables/>
+    <store-in-database-variables/>
+    <browser-engine>WEBKIT</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables"/>
+  <comment class="String">Simple Snippet which Loads the News Magazine website.</comment>
+  <body class="Body">
+    <blockBeginStep class="BlockBeginStep" id="0"/>
+    <steps class="ArrayList">
+      <object class="Transition" serializationversion="0" id="1">
+        <property name="name" class="String">Load Page</property>
+        <property name="stepAction" class="LoadPage2">
+          <property name="urlProvider" class="kapow.robot.plugin.common.stepaction.urlprovider2.ValueURLProvider2">
+            <property name="URL" class="String">http://kapowsoftware.com/tutorial/news-magazine/index.html</property>
+          </property>
+          <property name="browserConfigurationSpecification" class="kapow.robot.plugin.common.support.browser2.BrowserConfigurationSpecificationWebKit" serializationversion="17">
+            <property name="jsonHandling" class="com.kapowtech.browser.documentparser.JSONHandling">
+              <property name="enum-name" class="String">TRANSFORM_TO_XML</property>
+            </property>
+            <property name="transformExcelToHtml" class="Boolean">true</property>
+            <property name="migrationNotes" class="kapow.robot.plugin.common.support.Text">
+              <property name="text" class="String">Default value changed: screenSize 800 x 600 -&gt; 1280 x 1024
+Default value changed: userAgentProvider Internet Explorer 8.0 on Windows 7 -&gt; Chrome 27.0 on Windows 7
+Default value changed: ignoreLoadErrors false -&gt; true</property>
+            </property>
+            <property name="ancestorProvider" class="kapow.robot.plugin.common.support.browser2.StepBrowserConfigurationSpecificationAncestorProvider"/>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" class="Boolean">true</property>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep" id="2"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="0"/>
+        <to idref="1"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="2"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+    </edges>
+  </body>
+</object>
