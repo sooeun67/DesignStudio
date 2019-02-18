@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="kapow.robot.common.domain.Type" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>9.1.2</version>
+      <version>9.3.9</version>
+    </saved-by-versions>
+  </prologue>
+  <property name="attributes" class="kapow.robot.common.domain.Attributes">
+    <object class="kapow.robot.common.domain.Attribute" serializationversion="0">
+      <property name="name" class="String">RestService</property>
+      <property name="type" class="kapow.robot.plugin.common.domain.TextAttributeType"/>
+      <property name="defaultValue" class="String">http://rap-ws.uis.georgetown.edu:8080/services-rabbitmq-jaxrs/rest/queue/kapow_queue/</property>
+    </object>
+  </property>
+  <property name="typeKind" class="kapow.robot.common.domain.StandardTypeKind"/>
+</object>

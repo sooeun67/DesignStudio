@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Snippet" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>9.3.9</version>
+    </saved-by-versions>
+    <referenced-types/>
+    <referenced-snippets/>
+    <typed-variables/>
+    <global-variables/>
+    <parameters/>
+    <return-variables/>
+    <store-in-database-variables/>
+    <browser-engine>CLASSIC</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables"/>
+  <comment class="String"/>
+  <body class="Body">
+    <blockBeginStep class="BlockBeginStep" id="0"/>
+    <steps class="ArrayList">
+      <object class="Transition" serializationversion="0" id="1">
+        <property name="name" class="String">Default Date</property>
+        <property name="stepAction" class="AssignVariable" serializationversion="2">
+          <property name="stringExpr" class="kapow.robot.plugin.common.support.expression.multipletype.StringProcessorsExpression" serializationversion="0">
+            <property name="dataConverters" class="DataConverters">
+              <element class="EvaluateExpression" serializationversion="0">
+                <property name="expression" class="String">length(ISIS.articleDate) &gt;0 ?ISIS.articleDate :  now()</property>
+              </element>
+              <element class="ExtractDate">
+                <property name="formats" class="BeanList">
+                  <object class="kapow.robot.plugin.common.stringprocessor.datefetcher.PatternBasedDateFormatSpecification">
+                    <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.DateExtractorPatternValueStringExpression">
+                      <property name="value" class="String">yyyy-MM-dd HH:mm:ss</property>
+                    </property>
+                  </object>
+                  <object class="kapow.robot.plugin.common.stringprocessor.datefetcher.PatternBasedDateFormatSpecification">
+                    <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.DateExtractorPatternValueStringExpression">
+                      <property name="value" class="String">dd MMM yyy HH:mm:ss</property>
+                    </property>
+                  </object>
+                </property>
+              </element>
+              <element class="FormatDate">
+                <property name="pattern" class="String">dd MMM yyyy 00:00:00</property>
+              </element>
+            </property>
+          </property>
+          <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" class="String">ISIS.articleDate</property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" class="Boolean" id="2">true</property>
+      </object>
+      <object class="Transition" serializationversion="0" id="3">
+        <property name="name" class="String">Trim title</property>
+        <property name="stepAction" class="AssignVariable" serializationversion="2">
+          <property name="stringExpr" class="kapow.robot.plugin.common.support.expression.multipletype.StringProcessorsExpression" serializationversion="0">
+            <property name="dataConverters" class="DataConverters">
+              <element class="GetVariable" serializationversion="2">
+                <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                  <property name="name" class="String">ISIS.articleTitle</property>
+                </property>
+              </element>
+              <element class="ConvertUsingJavaScript">
+                <property name="script" class="kapow.robot.plugin.common.support.expression.stringexpr.MultilineValueStringExpression">
+                  <property name="value" class="String">function toBytesUTF8( chars) {
+  return unescape( encodeURIComponent(chars));
+}
+function fromBytesUTF8( chars) {
+  return decodeURIComponent(escape(chars));
+}
+function truncateByBytesUTF8( chars, n) {
+  var bytes = toBytesUTF8( chars).substring(0,n);
+  while( true) {
+    try {
+		return fromBytesUTF8( bytes);
+	}
+	catch(e) {};
+	bytes = bytes.substring( 0, bytes.length-1);
+  }
+}
+OUTPUT = truncateByBytesUTF8( INPUT, 255);</property>
+                </property>
+              </element>
+            </property>
+          </property>
+          <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" class="String">ISIS.articleTitle</property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="2"/>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep" id="4"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="0"/>
+        <to idref="1"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="3"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="3"/>
+        <to idref="4"/>
+        <attachment>
+          <null/>
+        </attachment>
+      </object>
+    </edges>
+  </body>
+</object>
